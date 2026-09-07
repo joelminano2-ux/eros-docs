@@ -7,10 +7,7 @@ from pypdf import PdfWriter, PdfReader
 from pdf2docx import Converter
 from docx2pdf import convert
 
-# ==========================================
-# CONFIGURACIÓN DE COLORES Y RUTAS
-# ==========================================
-os.system('') # Activar colores en Windows
+os.system('')
 CYAN = '\033[96m'
 ROJO = '\033[91m'
 VERDE = '\033[92m'
@@ -38,10 +35,6 @@ def mostrar_banner():
     print(BLANCO + "    =======================================================================")
     print("                      By: Gianmarco Joel Miñano Peña")
     print("    =======================================================================\n" + RESET)
-
-# ==========================================
-# FUNCIONES AUXILIARES (ESCÁNER)
-# ==========================================
 
 def listar_archivos(extension='.pdf'):
     archivos = [f for f in os.listdir(CARPETA_ENTRADA) if f.lower().endswith(extension) and not f.startswith('~$')]
@@ -77,10 +70,6 @@ def procesar_rangos(texto_rangos, total_paginas):
             grupos.append([int(parte) - 1])
             
     return grupos
-
-# ==========================================
-# FUNCIONES INTELIGENTES DE CONVERSIÓN
-# ==========================================
 
 def unir_pdfs():
     print(AMARILLO + "\n[+] UNIR PDFs" + RESET)
@@ -327,10 +316,6 @@ def imagenes_a_pdf():
     imagen_base.save(ruta_salida, save_all=True, append_images=lista_imagenes)
     
     print(VERDE + f"[✔] Éxito. Galería PDF guardada en: {ruta_salida}" + RESET)
-
-# ==========================================
-# MENÚ PRINCIPAL
-# ==========================================
 
 def menu():
     preparar_carpetas()
